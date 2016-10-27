@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BatteryService"
+             x:Class="BatteryService.MainPage">
+
+  <ContentPage.Content>
+    <StackLayout Padding="10">
+      <Label x:Name="lblUIDesc" Text="SIMPLE UI TO START/STOP THE BATTERY REPORTING SERVICE" FontSize="18" TextColor="Blue"/>
+      <Button Text="Start" BackgroundColor="Green" WidthRequest="90" TextColor="White" Clicked="OnStart"/>
+      <Button Text="Stop" BackgroundColor="Red" WidthRequest="90" TextColor="White" Clicked="OnStop"/>
+    </StackLayout>
+  </ContentPage.Content>
+
+  
+
+</ContentPage>
