@@ -13,7 +13,7 @@ namespace BatteryService
         {
             InitializeComponent();
 
-            MainPage = new BatteryService.MainPage();
+            MainPage = new BatteryService.View.MainPage();
         }
 
         protected override void OnStart()
