@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Android.Content;
+using AndroidBatteryService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +12,14 @@ namespace BatteryService.ViewModel
     {
         public void StartBatteryService()
         {
-            //DisplayAlert("Started", "You Just started the battery service", "OK");
+            Intent intent = new Intent(Android.App.Application.Context, typeof(AndroidBatteryService.AndroidBatteryService));
+            Android.App.Application.Context.StartService(intent);
         }
 
         public void StopBatteryService()
         {
-            //DisplayAlert("Started", "You Just started the battery service", "OK");
+            Intent intent = new Intent(Android.App.Application.Context, typeof(AndroidBatteryService.AndroidBatteryService));
+            Android.App.Application.Context.StopService(intent);
         }
     }
 }
