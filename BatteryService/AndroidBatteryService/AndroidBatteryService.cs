@@ -16,6 +16,8 @@ namespace AndroidBatteryService
     public class AndroidBatteryService : Service
     {
 
+        private BatteryBroadCastReciever _broadCastReciever;
+
         public AndroidBatteryService()
         {
            
@@ -25,6 +27,10 @@ namespace AndroidBatteryService
         public override StartCommandResult OnStartCommand(Intent intent, [GeneratedEnum] StartCommandFlags flags, int startId)
         {
             Toast.MakeText(this, "The Battery Service was just started", ToastLength.Long).Show();
+            //you are interested in recieving the battery status of the device.
+            //To do this, instantiate BatteryBroadCastReciever
+            _broadCastReciever = new BatteryBroadCastReciever();
+            RegisterReceiver(_broadCastReciever, new IntentFilter(Intent.ActionBatteryChanged));
             return base.OnStartCommand(intent, flags, startId);
         }
 
