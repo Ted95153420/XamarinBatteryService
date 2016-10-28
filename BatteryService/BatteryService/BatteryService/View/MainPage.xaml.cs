@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BatteryService.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,19 +10,23 @@ namespace BatteryService.View
 {
     public partial class MainPage : ContentPage
     {
+        private MainPageViewModel _mainPageVM;
         public MainPage()
         {
             InitializeComponent();
+            _mainPageVM = new MainPageViewModel();
+            BindingContext = _mainPageVM;
         }
 
-        private void OnStart(Object sender, EventArgs eArgs)
-        {
 
+        public void OnStart(Object sender, EventArgs eArgs)
+        {
+            _mainPageVM.StartBatteryService();
         }
 
-        private void OnStop(Object sender, EventArgs eArgs)
+        public void OnStop(Object sender, EventArgs eArgs)
         {
-
+            _mainPageVM.StopBatteryService();
         }
     }
 }
