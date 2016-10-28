@@ -13,6 +13,7 @@ namespace BatteryService.ViewModel
         public void StartBatteryService()
         {
             Intent intent = new Intent(Android.App.Application.Context, typeof(AndroidBatteryService.AndroidBatteryService));
+            intent.SetFlags(ActivityFlags.NewTask);
             Android.App.Application.Context.StartService(intent);
         }
 

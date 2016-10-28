@@ -12,6 +12,7 @@ using Android.Widget;
 
 namespace AndroidBatteryService
 {
+    [Service]
     public class AndroidBatteryService : Service
     {
 
