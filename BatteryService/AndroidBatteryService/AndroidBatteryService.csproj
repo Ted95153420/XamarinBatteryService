@@ -38,6 +38,7 @@
     <Compile Include="AndroidBatteryService.cs" />
     <Compile Include="BatteryBroadCastReciever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartupBoadcastReciever.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
