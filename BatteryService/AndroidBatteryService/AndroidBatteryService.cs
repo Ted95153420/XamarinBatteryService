@@ -31,7 +31,8 @@ namespace AndroidBatteryService
             //To do this, instantiate BatteryBroadCastReciever
             _broadCastReciever = new BatteryBroadCastReciever();
             RegisterReceiver(_broadCastReciever, new IntentFilter(Intent.ActionBatteryChanged));
-            return base.OnStartCommand(intent, flags, startId);
+            base.OnStartCommand(intent, flags, startId);
+            return StartCommandResult.Sticky;
         }
 
         public override void OnCreate()
