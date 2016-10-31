@@ -1,4 +1,5 @@
-﻿using Android.Content;
+﻿using Android.App;
+using Android.Content;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,11 @@ using System.Threading.Tasks;
 namespace AndroidBatteryService
 {
     //The sole purpose of this class is to start the Android Battery Service
-    //when the phone starts.
+    //when the device starts.
+    //[BroadcastReceiver(Enabled = true, Exported = true, Permission = "RECEIVE_BOOT_COMPLETED")]
+    //[IntentFilter(new string[] { "android.intent.action.BOOT_COMPLETED" })]
+    [BroadcastReceiver(Enabled = true, Exported = true, Permission = "RECEIVE_BOOT_COMPLETED")]
+    [IntentFilter(new String[] { Intent.ActionBootCompleted}, Priority = (int)IntentFilterPriority.LowPriority)]
     public class StartupBoadcastReciever : BroadcastReceiver
     {
         public override void OnReceive(Context context, Intent intent)
