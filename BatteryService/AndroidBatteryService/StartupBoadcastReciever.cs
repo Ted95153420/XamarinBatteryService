@@ -14,7 +14,7 @@ namespace AndroidBatteryService
     //[BroadcastReceiver(Enabled = true, Exported = true, Permission = "RECEIVE_BOOT_COMPLETED")]
     //[IntentFilter(new string[] { "android.intent.action.BOOT_COMPLETED" })]
     [BroadcastReceiver(Enabled = true, Exported = true, Permission = "RECEIVE_BOOT_COMPLETED")]
-    [IntentFilter(new String[] { Intent.ActionBootCompleted}, Priority = (int)IntentFilterPriority.LowPriority)]
+    [IntentFilter(new String[] { Intent.ActionBootCompleted}, Priority = (int)IntentFilterPriority.HighPriority)]
     public class StartupBoadcastReciever : BroadcastReceiver
     {
         public override void OnReceive(Context context, Intent intent)

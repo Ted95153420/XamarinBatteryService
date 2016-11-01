@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:BatService="clr-namespace:AndroidBatteryService; Assembly=AndroidBatteryService" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<application android:label="$safeprojectname$">
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<application android:label="$FrancescosBatteryProject$">
 		<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	</application>
 	<receiver android:name="AndroidBatteryService">
