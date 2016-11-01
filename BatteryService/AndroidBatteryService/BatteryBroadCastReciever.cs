@@ -1,6 +1,7 @@
 ﻿using Android.Content;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace AndroidBatteryService
             //As an example I assigned the battery level to an Integer. You can put code in here to do anything
             //(i.e - report battery level to your Web App.) If you would like help with this, let me know...
             int level = intent.GetIntExtra("level", 0);
+            Debug.WriteLine("JUST CHANGED THE BATTERY CHARGE LEVEL TO " + level.ToString());
         }
     }
 }
